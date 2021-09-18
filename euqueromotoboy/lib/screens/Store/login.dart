@@ -14,13 +14,13 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 100, 10, 0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 400,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10, left: 10),
+            child: Container(
+              width: 480,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -29,9 +29,8 @@ class _LoginState extends State<Login> {
                   Stack(
                     children: [
                       Image.asset(
-                        "motoboy.png",
-                        width: 200,
-                        height: 200,
+                        "login.png",
+                        fit: BoxFit.fill,
                       ),
                     ],
                   ),
@@ -74,8 +73,8 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     ));
   }
