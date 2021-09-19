@@ -1,3 +1,4 @@
+import 'package:euqueromotoboy/widgets/acceptedfield.dart';
 import 'package:euqueromotoboy/widgets/button.dart';
 import 'package:euqueromotoboy/widgets/newText.dart';
 import 'package:euqueromotoboy/widgets/requestfield.dart';
@@ -40,10 +41,7 @@ class _DeliveryHomeState extends State<DeliveryHome> {
             SizedBox(
               height: 10,
             ),
-            RequestField(),
-            RequestField(),
-            RequestField(),
-            RequestField(),
+            AcceptedField(),
           ],
         ),
       ),
