@@ -10,7 +10,7 @@ class AcceptedField extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Container(
         width: MediaQuery.of(context).size.width - 10,
-        height: 130,
+        height: 220,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -60,30 +60,44 @@ class AcceptedField extends StatelessWidget {
                 size: 15,
                 color: Colors.black,
               ),
+              NewText(
+                text: "Pegar: Rua Clovis de Andrade Ribeiro 135",
+                size: 15,
+                color: Colors.black,
+              ),
+              Divider(
+                height: 15,
+              ),
+              NewText(
+                text: "Endereço de entrega:",
+                size: 16,
+                color: Colors.orange,
+                bold: FontWeight.bold,
+              ),
+              Divider(
+                height: 10,
+              ),
+              NewText(
+                text: "Renato Ikeuchi",
+                size: 15,
+                color: Colors.black,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   NewText(
-                    text: "Pegar: Rua Clovis de Andrade Ribeiro 135",
+                    text: "Entregar: Rua Benjamin constant 135",
                     size: 15,
                     color: Colors.black,
                   ),
                   ElevatedButton(
                     onPressed: () {},
                     child: NewText(
-                      text: "Entregue",
-                      size: 12,
+                      text: "entregar",
                       color: Colors.white,
+                      bold: FontWeight.bold,
                     ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: NewText(
-                      text: "Cancelar",
-                      size: 12,
-                      color: Colors.white,
-                    ),
-                  ),
+                  )
                 ],
               ),
             ],
