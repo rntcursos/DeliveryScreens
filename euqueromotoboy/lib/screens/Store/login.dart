@@ -1,5 +1,6 @@
 import 'package:euqueromotoboy/widgets/TextField.dart';
 import 'package:euqueromotoboy/widgets/button.dart';
+import 'package:euqueromotoboy/widgets/newText.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -13,69 +14,67 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: SingleChildScrollView(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10, left: 10),
-            child: Container(
-              width: 480,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
+      child: SingleChildScrollView(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: new Container(
+                  child: new Image.asset(
+                    'motoboy.png',
+                    fit: BoxFit.fill,
+                    width: 200.0,
+                    height: 200.0,
+                  ),
+                  color: Colors.black,
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width,
+                  height: 300.0,
+                ),
+              ),
+              NewTextField(
+                hint: "Digite seu email",
+                label: "Email",
+                obscure: false,
+              ),
+              NewTextField(
+                hint: "Digite sua senha",
+                label: "Senha",
+                obscure: true,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              NewButton(
+                font_size: 15,
+                text: "Login",
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Stack(
-                    children: [
-                      Image.asset(
-                        "login.png",
-                        fit: BoxFit.fill,
-                      ),
-                    ],
+                  NewText(
+                    color: Colors.orange,
+                    size: 14,
+                    text: "Não tem conta? ",
                   ),
-                  Container(
-                    height: 100,
-                  ),
-                  NewTextField(
-                    obscure: false,
-                    hint: "Digite seu email",
-                    label: "Email",
-                  ),
-                  NewTextField(
-                    obscure: true,
-                    hint: "Digite sua senha",
-                    label: "Senha",
-                  ),
-                  Divider(
-                    height: 50,
-                  ),
-                  NewButton(
-                    font_size: 14,
-                    text: "Login",
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Não tem conta?   "),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Cadastrar!",
-                          style: TextStyle(color: Colors.orange),
-                        ),
-                      ),
-                    ],
+                  TextButton(
+                    onPressed: () {},
+                    child: NewText(
+                      color: Colors.orange,
+                      size: 14,
+                      text: "Cadastrar",
+                    ),
                   ),
                 ],
               ),
-            ),
-          ),
-        ],
+            ]),
       ),
-    ));
+    );
   }
 }

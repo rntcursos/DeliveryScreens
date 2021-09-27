@@ -1,4 +1,6 @@
 import 'package:euqueromotoboy/screens/DeliveryGuy/home.dart';
+import 'package:euqueromotoboy/screens/Store/login.dart';
+import 'package:euqueromotoboy/screens/Store/orderplaced.dart';
 import 'package:euqueromotoboy/screens/Store/requestScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         canvasColor: const Color(0xFF303030),
       ),
       home: Scaffold(
-        body: DeliveryHome(),
+        body: Login(),
       ),
     );
   }

@@ -126,6 +126,7 @@ class _RequestScreenState extends State<RequestScreen> {
                             text: "Total: R\$ 104,00",
                             color: Colors.black,
                             size: 14,
+                            bold: FontWeight.bold,
                           ),
                         ],
                       ),
