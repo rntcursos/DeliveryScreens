@@ -1,86 +1,103 @@
+import 'package:euqueromotoboy/widgets/iconbutton.dart';
 import 'package:euqueromotoboy/widgets/newText.dart';
 import 'package:flutter/material.dart';
 
-class RequestField extends StatelessWidget {
-  const RequestField({Key? key}) : super(key: key);
+class NewRequest extends StatelessWidget {
+  final cliente;
+
+  final enderecoloja;
+
+  final enderecoentrega;
+
+  const NewRequest(
+      {Key? key, this.cliente, this.enderecoloja, this.enderecoentrega})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Container(
-        width: MediaQuery.of(context).size.width - 10,
-        height: 130,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 80,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(20),
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        shadowColor: Colors.black,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        key: null,
+        child: new Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      NewText(
+                        text: cliente,
+                        size: 16,
+                        bold: FontWeight.bold,
+                      ),
+                    ]),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      NewIconButton(
+                        pressed: () {},
+                        colors: Colors.orange,
+                        icon: Icons.local_airport,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      NewText(
+                        size: 14,
+                        text: enderecoloja,
+                      ),
+                    ]),
+              ),
+              new Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      NewIconButton(
+                        pressed: () {},
+                        colors: Colors.orange,
+                        icon: Icons.local_library_outlined,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      NewText(
+                        size: 14,
+                        text: enderecoentrega,
+                      ),
+                    ]),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    NewIconButton(
+                      pressed: () {},
+                      colors: Colors.orange,
+                      icon: Icons.add,
                     ),
-                    child: Center(
-                      child: Text("Aberto"),
-                    ),
-                  ),
-                  NewText(
-                    text: "Valor: 80,00",
-                    size: 15,
-                    color: Colors.black,
-                    bold: FontWeight.bold,
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Divider(
-                height: 10,
-              ),
-              NewText(
-                text: "Endereço de coleta:",
-                size: 16,
-                color: Colors.orange,
-                bold: FontWeight.bold,
-              ),
-              Divider(
-                height: 4,
-              ),
-              NewText(
-                text: "Loja: Padaria NSA",
-                size: 15,
-                color: Colors.black,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  NewText(
-                    text: "Pegar: Rua Clovis de Andrade Ribeiro 135",
-                    size: 15,
-                    color: Colors.black,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: NewText(
-                      text: "Aceitar",
-                      bold: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+            ]),
       ),
     );
   }

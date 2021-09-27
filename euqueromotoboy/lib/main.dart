@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         canvasColor: const Color(0xFF303030),
       ),
       home: Scaffold(
-        body: Login(),
+        body: DeliveryHome(),
       ),
     );
   }
